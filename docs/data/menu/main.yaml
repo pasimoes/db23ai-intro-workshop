@@ -3,6 +3,11 @@
 main:
   - name: Getting Started
     ref: "/"
+  - name: "Configuration"
+    ref: "/configuration"
+    sub:
+      - name: "Database 🗄️"
+        ref: "/configuration/db_config.md"
   - name: Walkthrough
     ref: "/walkthrough"
   - name: Infrastructure
