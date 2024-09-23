@@ -3,7 +3,7 @@
 
 baseURL = 'https://pasimoes.github.com/db23ai-intro-workshop'
 languageCode = 'en-us'
-title = 'Oracle Database 23ai AppDev Introduction Workshop'
+title = 'Oracle Database 23ai AI & Dev for Data Quick Start Workshop'
 theme = "hugo-geekdoc"
 sectionPagesMenu = 'main'
 tableOfContents = true
