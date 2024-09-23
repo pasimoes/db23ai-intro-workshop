@@ -1,0 +1,41 @@
+## Copyright (c) 2023, 2024, Oracle and/or its affiliates.
+## Licensed under the Universal Permissive License v1.0 as shown at http://oss.oracle.com/licenses/upl.
+
+baseURL = 'https://pasimoes.github.com/db23ai-intro-workshop'
+languageCode = 'en-us'
+title = 'Oracle Database 23ai AI & Dev for Data Quick Start Workshop'
+theme = "hugo-geekdoc"
+sectionPagesMenu = 'main'
+tableOfContents = true
+pluralizeListTitles = false
+
+# Geekdoc required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
+# menu configuration
+[params]
+  # Render menu from data file in 'data/menu/main.yaml'
+  geekdocMenuBundle = true
+  geekdocCollapseAllSections = true
+  geekdocRepo = "https://pasimoes.github.com/db23ai-intro-workshop"
+  geekdocLogo = "o_tag.png"
+  [params.geekdocContentLicense]
+    name = "© 2024 Oracle and/or its affiliates"
+    link = "https://oss.oracle.com/licenses/upl"
+
+# Needed for mermaid shortcodes
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for mermaid shortcode
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
+
+[taxonomies]
+   tag = "tags"
