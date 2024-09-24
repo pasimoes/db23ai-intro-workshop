@@ -84,6 +84,22 @@ We will connecting using Host Name/IP Address and Service Name.
 
 ![Database Connection... ](../images/vscode-oracledb-connection.png)
 
+### Create User for Workshop tasks
+
+Click with the right button on the Database connection name to open the menu, and then click on `Open SQL Worksheet`.
+
+```sql
+CREATE USER demo_user identified BY `<your_password>` QUOTA UNLIMITED ON USERS;
+```
+CREATE USER demo_user identified BY Orcl#2024 QUOTA UNLIMITED ON USERS;;
+
+```sql
+GRANT DB_DEVELOPER_ROLE TO demo_user;  
+GRANT RESOURCE, CONNECT, UNLIMITED tablespace TO demo_user;
+GRANT CREATE SESSION TO demo_user;  
+GRANT SELECT ANY TABLE ON SCHEMA demo_user TO demo_user;
+```
+
 ### Sandbox Interface
 
 To configure the Database from the Sandbox, navigate to `Configuration -> Database`:
