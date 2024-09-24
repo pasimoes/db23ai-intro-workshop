@@ -16,11 +16,15 @@ Welcome to the **Oracle Database 23ai** AI & Dev for Data Quick Start Workshop! 
 
 ## About Oracle Database 23ai
 
-Oracle Database 23ai is the current long term support release version of the database. This means that it is the suggested version for all enterprise workloads by Oracle Corporation. Oracle Database 23ai is the newest release, combining all the features developed over the past 40 years, similar to the previous long-term support release, version 19c, and the innovation release, version 21c. If you're interested in the new features from 21c, bookmark this lab for later.
+Oracle Database 23ai is the current long term support release version of the database. This means that it is the suggested version for all enterprise workloads by Oracle Corporation. Oracle Database 23ai is the newest release, combining all the features developed over the past 40 years, similar to the previous long-term support release, version 19c, and the innovation release, version 21c.
 
-The Oracle Database is what is called a 'converged' database. This means the database supports multiple different data types like Relational, JSON, XML, Graph, Vector, and more. Converged also means it has the ability to run all sorts of workloads, from Transactional to IoT to Analytical to Machine Learning and more. It also can also handle a number of different development paradigm, including Microservices, Events, REST, SaaS, and CI/CD, (to name a few). All of this functionality can be used right 'out of the box'. All while still benefiting from Oracles leading performance, security, scalability and availability.
+Oracle Database 23ai now includes semantic search capabilities using AI vectors. The collection of features, called [Oracle AI Vector Search](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/overview-ai-vector-search.html), includes a new vector data type, vector indexes, and vector search SQL operators that enable the Oracle Database to store the semantic content of documents, images, and other unstructured data as vectors, and use these to build [Generative AI](https://www.oracle.com/ie/artificial-intelligence/generative-ai/what-is-generative-ai/) applications with fast similarity queries.
 
-Oracle Database was built on 3 key themes.
+These new capabilities also support Retrieval Augmented Generation (RAG), a breakthrough generative AI technique that combines Large Language Models (LLMs) and business data to deliver more informed answers to natural language questions.
+
+Also, the Oracle Database is what is called a 'converged' database. This means the database supports multiple different data types like Relational, JSON, XML, Graph, Vector, and more. Converged also means it has the ability to run all sorts of workloads, from Transactional to IoT to Analytical to Machine Learning and more. It also can also handle a number of different development paradigm, including Microservices, Events, REST, SaaS, and CI/CD, (to name a few). All of this functionality can be used right 'out of the box'. All while still benefiting from Oracles leading performance, security, scalability and availability.
+
+Oracle Database was built on 3 key themes:
 
 - AI for Data
 - Dev for Data
@@ -63,40 +67,6 @@ Check out this lab for free access to two databases and a hands-on guide to get 
 - Container Runtime e.g. docker/podman (for running in a Container)
 - Access to an Embedding and Chat Model:
   - API Keys for Third-Party Models (OpenAI)
-
-## Oracle Database 23ai Free Installation
-
-As previously mentioned Oracle Database 23ai makes it easier than ever to develop using the Oracle Database. Thus offers multiple free versions of the database (built on the same code as the paid version) and option to straightforward deployment from Cloud to container images. For this workshop, we will adopt the Oracle Database 23ai Free Container Image, which contains Oracle Database 23ai Free based on an Oracle Linux base image. Reference [Oracle Database 23ai (23.5.0.0) Free Container Image Documentation](https://container-registry.oracle.com/ords/f?p=113:4:5759255742203:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:1863,1863,Oracle%20Database%20Free,Oracle%20Database%20Free,1,0&cs=3c0O79B2sQoXhCvaAnkRgscp8Nv7PCQ4N-o99ahlTo902ul1cu4r0G9oyyF-yeQutEmuSoJaEphjVdmKrOCLnVA)
-
-{{< hint type=[info] icon=gdoc_info_outline title="Same... but Different" >}}
-Reference to `podman` commands, if applicable to your environment, can be substituted with `docker`.
-{{< /hint >}}
-
-1. Start the DB 23ai Container:
-
-   ```bash
-   podman run --name=db23aifree \
-           -e ORACLE_PWD=<your database passwords> \
-           --publish 1521:1521 \
-           --detach \
-           container-registry.oracle.com/database/free:latest
-   ```
-
-2. Connecting to the Oracle Database Free Container.
-
-   After the Oracle Database indicates that the container has started, and the STATUS field shows (healthy), client applications can connect to the database.
-
-3. Connecting from Within the Container.
-
-   You can connect to the Oracle Database by running a SQL*Plus command from within the container using one of the following commands:
-
-   ```cmd
-   podman exec -it db23aifree sqlplus sys/<your_password>@FREE as sysdba
-
-   podman exec -it db23aifree sqlplus system/<your_password>@FREE
-
-   podman exec -it db23aifree sqlplus pdbadmin/<your_password>@FREEPDB1
-   ```
 
 ## Learn More
 

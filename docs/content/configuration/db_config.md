@@ -9,11 +9,56 @@ Copyright (c) 2023, 2024, Oracle and/or its affiliates.
 Licensed under the Universal Permissive License v1.0 as shown at http://oss.oracle.com/licenses/upl.
 -->
 
-To use the Retrieval-Augmented Generation (RAG) functionality of the Sandbox, you will need to setup/enable an [embedding model](../model_config) and have access to an **Oracle Database 23ai**. Both the [Always Free Oracle Autonomous Database Serverless (ADB-S)](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-always-free.html) and the [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) are supported. They are a great, no-cost, way to get up and running quickly.
-
 ## Configuration
 
-The database can either be configured using environment variables or through the **Sandbox** interface.
+## Oracle Database 23ai Free Installation
+
+As previously mentioned Oracle Database 23ai makes it easier than ever to develop using the Oracle Database. Thus offers multiple free versions of the database (built on the same code as the paid version) and option to straightforward deployment from Cloud to container images.
+
+For this workshop, we will adopt the Oracle Database 23ai Free Container Image, which contains Oracle Database 23ai Free based on an Oracle Linux base image. Reference [Oracle Database 23ai (23.5.0.0) Free Container Image Documentation](https://container-registry.oracle.com/ords/f?p=113:4:5759255742203:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:1863,1863,Oracle%20Database%20Free,Oracle%20Database%20Free,1,0&cs=3c0O79B2sQoXhCvaAnkRgscp8Nv7PCQ4N-o99ahlTo902ul1cu4r0G9oyyF-yeQutEmuSoJaEphjVdmKrOCLnVA)
+
+{{< hint type=[info] icon=gdoc_info_outline title="Same... but Different" >}}
+Reference to `podman` commands, if applicable to your environment, can be substituted with `docker`.
+{{< /hint >}}
+
+1. Start the DB 23ai Container:
+
+   ```bash
+   podman run --name=db23aifree \
+           -e ORACLE_PWD=<your database passwords> \
+           --publish 1521:1521 \
+           --detach \
+           container-registry.oracle.com/database/free:latest
+   ```
+
+   {{< hint type=[tip] icon=gdoc_info_outline title="..on Mac Books with ARM chips" >}}
+   On the 16th of September 2024, Oracle released Oracle Database 23ai (23.5) Free on Linux for ARM, downloadable as an Oracle Linux 8 RPM file at <https://www.oracle.com/database/free/get-started/>. At the moment we published this workshop, the ARM image was not available at `container-registry.oracle.com` but we will use an image provided by [Gerald Venzl](https://www.linkedin.com/in/geraldvenzl/), VP Developer Initiatives, Oracle Database.
+
+   ```bash
+   podman run --name=db23aifree \
+           -e ORACLE_PASSWORD=<your database passwords> \
+           --publish 1521:1521 \
+           --detach \
+           ghcr.io/gvenzl/oracle-free:23.5-full
+   ```
+
+   {{< /hint >}}
+
+2. Connecting to the Oracle Database Free Container.
+
+   After the Oracle Database indicates that the container has started, and the STATUS field shows (healthy), client applications can connect to the database.
+
+3. Connecting from Within the Container.
+
+   You can connect to the Oracle Database by running a SQL*Plus command from within the container using one of the following commands:
+
+   ```cmd
+   podman exec -it db23aifree sqlplus sys/<your_password>@FREE as sysdba
+
+   podman exec -it db23aifree sqlplus system/<your_password>@FREE
+
+   podman exec -it db23aifree sqlplus pdbadmin/<your_password>@FREEPDB1
+   ```
 
 ### Sandbox Interface
 
@@ -86,3 +131,7 @@ Replace "DEMO" as required.
 {{< hint type=[tip] icon=gdoc_info_outline title="Multiple Users" >}}
 Creating multiple users in the same database allows developers to separate their experiments simply by changing the "Database User:"
 {{< /hint >}}
+
+
+
+To use the Retrieval-Augmented Generation (RAG) functionality of the Sandbox, you will need to setup/enable an [embedding model](../model_config) and have access to an **Oracle Database 23ai**. Both the [Always Free Oracle Autonomous Database Serverless (ADB-S)](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-always-free.html) and the [Oracle Database 23ai Free](https://www.oracle.com/uk/database/free/get-started/) are supported. They are a great, no-cost, way to get up and running quickly.
