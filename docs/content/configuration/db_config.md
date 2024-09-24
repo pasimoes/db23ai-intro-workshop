@@ -60,6 +60,30 @@ Reference to `podman` commands, if applicable to your environment, can be substi
    podman exec -it db23aifree sqlplus pdbadmin/<your_password>@FREEPDB1
    ```
 
+### Connecting to Oracle Database
+
+There are many ways to interact with Oracle Database, on this workshop we listed the three interactive sql query tools described below. We chose the VS Code Oracle Dev Tools for this workshop.
+
+- An interactive and batch query tool
+  - Oracle SQL Developer Command Line ([SQLcl](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/24.2/index.html))
+  - [SQL*Plus Instant Client](https://docs.oracle.com/en/database/oracle/oracle-database/23/sqpug/SQL-Plus-quick-start.html#GUID-DCF33419-3BE4-4FC7-824E-D0CA0C0951D9)
+  - [Oracle Developer Tools for VS Code (SQL and PLSQL)](https://docs.oracle.com/en/database/oracle/developer-tools-for-vscode/getting-started/gettingstarted.html)
+
+1. Connecting using Oracle Developer Tools for VS Code
+
+We will connecting using Host Name/IP Address and Service Name.
+
+- To connect from Oracle Database Explorer, click the plus (+) sign.
+- A connection dialog will open. In the **Connection Type** dropdown, select **Basic (Host, Port, Service Name)**.
+- Enter the database hostname or IP Address, port number, and service name.
+- Select the database role from the **Role** drop down list.
+- Enter the username and password.
+- If you wish to use a different schema than the default schema associated with your username, check the Show more options checkbox and select the schema name from the Current Schema dropdown.
+- Provide a connection name to be used to reference this connection in Database Explorer and elsewhere.
+- Click the **Create Connection** button.
+
+![Database Connection... ](../images/vscode-oracledb-connection.png)
+
 ### Sandbox Interface
 
 To configure the Database from the Sandbox, navigate to `Configuration -> Database`:
