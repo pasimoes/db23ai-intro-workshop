@@ -3,6 +3,20 @@
 main:
   - name: Getting Started
     ref: "/"
+  - name: "Configuration"
+    ref: "/configuration"
+    sub:
+      - name: "Database 🗄️"
+        ref: "/configuration/db_config.md"
+  - name: Labs
+    sub:
+      - name: JSON Duality Views
+        ref: "/dualityview"
+      - name: AI Vector Search for Java
+        ref: "/vectorsearch4j"
+      - name: RAG with LangChain4j
+        ref: "/raglangchain4j"
+
   - name: Walkthrough
     ref: "/walkthrough"
   - name: Infrastructure

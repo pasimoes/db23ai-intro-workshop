@@ -1,5 +1,4 @@
 ##############################################################################
-<<<<<<< HEAD
 # Documentation Specific
 ##############################################################################
 #/themes/
@@ -8,15 +7,14 @@ hugo_stats.json
 
 # Temporary lock file while building
 /.hugo_build.lock
-=======
-# Enviroment (PyVen, IDE, etc.)
-##############################################################################
+
 **/.venv
 **/.vscode
+**/.idea
+**/target
 **/.DS_Store
 **/*.swp
 **/.scannerwork
 sonar-project.properties
 
 **/docs/public
->>>>>>> main
