@@ -14,6 +14,9 @@ main:
         ref: "/dualityview"
       - name: AI Vector Search for Java
         ref: "/vectorsearch4j"
+      - name: RAG with LangChain4j
+        ref: "/raglangchain4j"
+
   - name: Walkthrough
     ref: "/walkthrough"
   - name: Infrastructure

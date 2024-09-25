@@ -20,7 +20,11 @@ Speaking of Java, Oracle JDBC has added the necessary components to the JDBC dri
 
 ## Objectives
 
-This lab aims to provide hands-on experience with AI Vector Search, demonstrating how to get  ------ the strengths of both JSON and relational data models. You will learn how to create, query, and update JSON-relational Duality Views using SQL.
+This lab aims to provide hands-on experience with AI Vector Search, cover the creation of vector tables, perform basic DDL operations, and dive into similarity search using some of the new SQL functions in Oracle Database 23ai. This lab is meant to be a small introduction to the new AI functionality that Oracle Database 23ai supports.
+
+{{< hint type=[tip] icon=gdoc_timer title="Estimated Lab Time: " >}}
+20 minutes
+{{< /hint >}}
 
 ## Task 1: Create Vector Sample Table
 
@@ -194,6 +198,8 @@ Once again, the [Oracle Database 23ai — New Features Guide](https://docs.oracl
 ## Learn More
 
 - [Oracle Announces General Availability of AI Vector Search in Oracle Database 23ai](https://blogs.oracle.com/database/post/oracle-announces-general-availability-of-ai-vector-search-in-oracle-database-23ai)
+- [Oracle AI Vector Search Users Guide](https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/)
+- [OpenAI embedding models](https://openai.com/blog/new-embedding-models-and-api-updates)
 
 ## Acknowledgements
 

@@ -53,11 +53,11 @@ public class OracleDBUtils {
 
   // JDBC CONNECTION DETAILS
   private static final String URL = "jdbc:oracle:thin:@127.0.0.1:1521/FREEPDB1";
-//  private static final String USERNAME = System.getenv("DB_23AI_USERNAME");
-//  private static final String PASSWORD = System.getenv("DB_23AI_PASSWORD");
+  // private static final String USERNAME = System.getenv("DB_23AI_USERNAME");
+  // private static final String PASSWORD = System.getenv("DB_23AI_PASSWORD");
 
-  private static final String USERNAME = "DEMO_USER";
-  private static final String PASSWORD = "Orcl#2024";
+  private static final String USERNAME="demo_user";
+  private static final String PASSWORD="Orcl#2024";
 
 
   private OracleDBUtils(){
