@@ -71,18 +71,30 @@ There are many ways to interact with Oracle Database, on this workshop we listed
 
 1. Connecting using Oracle Developer Tools for VS Code
 
-We will connecting using Host Name/IP Address and Service Name.
+   We will connecting using Host Name/IP Address and Service Name.
 
-- To connect from Oracle Database Explorer, click the plus (+) sign.
-- A connection dialog will open. In the **Connection Type** dropdown, select **Basic (Host, Port, Service Name)**.
-- Enter the database hostname or IP Address, port number, and service name.
-- Select the database role from the **Role** drop down list.
-- Enter the username and password.
-- If you wish to use a different schema than the default schema associated with your username, check the Show more options checkbox and select the schema name from the Current Schema dropdown.
-- Provide a connection name to be used to reference this connection in Database Explorer and elsewhere.
-- Click the **Create Connection** button.
+   - To connect from Oracle Database Explorer, click the plus (+) sign.
+   - A connection dialog will open. In the **Connection Type** dropdown, select **Basic (Host, Port, Service Name)**.
+   - Enter the database hostname or IP Address, port number, and service name.
+   - Select the database role from the **Role** drop down list.
+   - Enter the username and password.
+   - If you wish to use a different schema than the default schema associated with your username, check the Show more options checkbox and select the schema name from the Current Schema dropdown.
+   - Provide a connection name to be used to reference this connection in Database Explorer and elsewhere.
+   - Click the **Create Connection** button.
 
-![Database Connection... ](../images/vscode-oracledb-connection.png)
+   ![Database Connection... ](../images/vscode-oracledb-connection.png)
+
+2. Check Database Version
+
+   Provided that everything was configured properly, you can run a query to validate it all. Copy the sample query below:
+
+   ```sql
+   SELECT BANNER_FULL FROM V$VERSION;
+   ```
+
+   Check the results and look for the BANNER_FULL column in the resulting record. You should see a result similar to the one below, which confirms you’re connected to an instance of Oracle Database 23ai.
+
+   ![Database version... ](../images/vscode-oracledb-version.png)
 
 ### Create User for Workshop tasks
 
@@ -99,6 +111,8 @@ GRANT RESOURCE, CONNECT, UNLIMITED tablespace TO demo_user;
 GRANT CREATE SESSION TO demo_user;  
 GRANT SELECT ANY TABLE ON SCHEMA demo_user TO demo_user;
 ```
+
+
 
 ### Sandbox Interface
 

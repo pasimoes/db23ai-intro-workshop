@@ -259,6 +259,8 @@ This lab aims to provide hands-on experience with JSON-relational Duality Views,
 
     You can now see that the update made to the orders table has propogated to the customer orders duality view, and the same occurs for all other representations of the customers table!
 
+## Wrapping it up
+
 **You've completed the workshop!**
 
 Note that the "etag" value supplied in the content is used for "out-of-the-box" optimistic locking to prevent the well-known "lost update" problem that can occur with concurrent operations. During a replace operation, the database checks that the eTag provided in the replacement document matches the latest eTag of the target Duality View document.

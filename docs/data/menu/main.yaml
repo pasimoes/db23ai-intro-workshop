@@ -12,6 +12,8 @@ main:
     sub:
       - name: JSON Duality Views
         ref: "/dualityview"
+      - name: AI Vector Search for Java
+        ref: "/vectorsearch4j"
   - name: Walkthrough
     ref: "/walkthrough"
   - name: Infrastructure
