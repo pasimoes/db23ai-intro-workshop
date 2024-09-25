@@ -8,6 +8,10 @@ main:
     sub:
       - name: "Database 🗄️"
         ref: "/configuration/db_config.md"
+  - name: Labs
+    sub:
+      - name: JSON Duality Views
+        ref: "/dualityview"
   - name: Walkthrough
     ref: "/walkthrough"
   - name: Infrastructure
